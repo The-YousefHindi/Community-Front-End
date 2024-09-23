@@ -1,144 +1,259 @@
-:root {
-    /* Colors */
-    --color-sedan-bg: #E38826;
-    --color-suvs-bg: #006970;
-    --color-luxury-bg: #004241;
-    --color-text: #FFFFFF;
-    --color-border: #F2F2F2;
-    --color-hover-sedan: #E38826;
-    --color-hover-suvs: #006970;
-    --color-hover-luxury: #004241;
-    --color-bg-hover: #F2F2F2;
+/* Up Global Variables Section */
 
-    /* Font families */
-    --font-body: 'Lexend Deca', sans-serif;
-    --font-heading: 'Big Shoulders Display', sans-serif;
+:root {
+  /* Colors */
+  --color-sedan-bg: #e38826;
+  --color-suvs-bg: #006970;
+  --color-luxury-bg: #004241;
+  --color-text: #ffffff;
+  --color-border: #f2f2f2;
+  --color-hover-sedan: #e38826;
+  --color-hover-suvs: #006970;
+  --color-hover-luxury: #004241;
+  --color-bg-hover: #f2f2f2;
+
+  /* Font families */
+  --font-body: "Lexend Deca", sans-serif;
+  --font-heading: "Big Shoulders Display", sans-serif;
 }
+
+/* Element Styling Section */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+/* Removes the Default Padding and Margin Added by Browsers */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; /* Prevent Scrolling Empty Space or Blank Colors */
+  padding: 0;
+  width: 100%;
 }
+
+/* Layout for the Main Container */
 
 #main {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-    justify-content: space-between;
-    padding: 0;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  padding: 0;
+  width: 100%;
 }
 
-#sedan, #suvs, #luxury {
-    flex: 1 1 33.3%; 
-    min-width: 300px; 
-    padding: 15% 5% 5%;
+/* Layout for the Three Sections in the Main Grid */
+
+#sedan,
+#suvs,
+#luxury {
+  box-sizing: border-box;
+  padding: 15% 5% 5%;
 }
+
+/* Different Background Colors for Different Sections */
 
 #sedan {
-    background-color:var(--color-sedan-bg);
+  background-color: var(--color-sedan-bg);
 }
+
 #suvs {
-    background-color:var(--color-suvs-bg);
+  background-color: var(--color-suvs-bg);
 }
+
 #luxury {
-    background-color:var(--color-luxury-bg);
+  background-color: var(--color-luxury-bg);
 }
+
+/* Common Style of Text and Headers for All Sections  */
+
 p {
-    align-items: center;
-    color:var(--color-text);
-    display: flex;
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 19px;
-    width: 80%;
+  align-items: center;
+  color: var(--color-text);
+  display: flex;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  width: 220px;
 }
+
 h1 {
-    align-items: center;
-    color:var(--color-text);
-    display: flex;
-    font-family: var(--font-heading);
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
+  align-items: center;
+  color: var(--color-text);
+  display: flex;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
 }
+
+/* Changes the Position of the Insides of Sections Without Moving the Container Itself */
+
+p,
+h1,
+img {
+  left: 70px;
+  position: relative;
+  top: 150px;
+}
+
+/* Give All Sections Block Properties */
+
 div {
-    display: block;
+  display: block;
 }
+
+/* Common Style of Buttons for All Sections */
+
 .button {
-border-radius: 30px;
-border: 1px solid var(--color-border);
-box-sizing: border-box;
-height: 49px;
-left: 30px;
-margin-top: 20px;
-padding: 15px 30px;
-position: relative;
-text-align: center;
-text-wrap: nowrap;
-width: 143px;
-}
-#sedanButton:hover{
-background-color: var(--color-hover-sedan);
-color: var(--color-bg-hover);
-cursor: pointer;
-transition: background-color .3s;
-transition: color .3s;
-}
-#suvsButton:hover{
-background-color: var(--color-hover-luxury);
-color: #006970;
-cursor: pointer;
-transition: background-color .3s;
-transition: color .3s;
-}
-#luxuryButton:hover{
-background-color: var(--color-bg-hover);
-color: #004241;
-cursor: pointer; 
-transition: background-color .3s;
-transition: color .3s;
+  border-radius: 30px;
+  border: 1px solid var(--color-border);
+  box-sizing: border-box;
+  height: 49px;
+  left: 100px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  position: relative;
+  text-align: center;
+  text-wrap: nowrap;
+  width: 143px;
 }
 
-  
+/* Unique Hover Style for Each Section */
 
+#sedanButton:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-hover-sedan);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+#suvsButton:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-hover-suvs);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+#luxuryButton:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-hover-luxury);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+/* Tablet Viewport Layout */
 
 @media (max-width: 1024px) {
-    #sedan, #suvs {
-        flex: 1 1 50%; 
-        padding: 5%;
-    }
-    #luxury {
-        flex: 1 1 100%; 
-        padding: 5% 30%;
-    }
+  #main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #luxury {
+    padding: 10% 80%;
+  }
+
+  #sedan img {
+    left: 60px;
+    position: relative;
+    top: 10px;
+  }
+
+  #sedan p {
+    left: 60px;
+    position: relative;
+    top: 10px;
+  }
+
+  #sedan h1 {
+    left: 65px;
+    position: relative;
+    top: 10px;
+  }
+  #suvs img {
+    left: 60px;
+    position: relative;
+    top: 10px;
+  }
+
+  #suvs p {
+    left: 60px;
+    position: relative;
+    top: 10px;
+  }
+
+  #suvs h1 {
+    left: 65px;
+    position: relative;
+    top: 10px;
+  }
+
+  #luxury p,
+  h1,
+  img {
+    left: 0px;
+    position: relative;
+    top: 0px;
+  }
+
+  #luxury h1 {
+    left: 5px;
+  }
+
+  #sedan .button,
+  #suvs .button {
+    left: 90px;
+  }
+
+  #luxury .button {
+    left: 30px;
+  }
+
+  p {
+    width: 220px;
+  }
 }
 
+/* Smartphone Viewport Layout */
 
 @media (max-width: 768px) {
-    #sedan, #suvs, #luxury {
-        flex: 1 1 100%; 
-        padding: 10%; 
-    }
-    h1 {
-        font-size: 24px; 
-    }
-    p {
-        font-size: 14px; 
-        line-height: 18px;
-    }
-    .button {
-        padding: 10px 20px; 
-    }
+  #main {
+    grid-template-columns: 1fr;
+  }
+  #sedan,
+  #suvs,
+  #luxury {
+    padding: 10% 5%;
+  }
+  .button {
+    left: 60px;
+    padding: 10px 30px;
+  }
+
+  #luxury p,
+  h1,
+  img {
+    left: 40px;
+    position: relative;
+  }
+
+  #luxury p {
+    margin-top: 20px;
+  }
+
+  #luxury h1 {
+    left: 45px;
+  }
+
+  #luxury .button {
+    left: 60px;
+  }
 }
-
-
