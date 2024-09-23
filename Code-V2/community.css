@@ -1,0 +1,144 @@
+:root {
+    /* Colors */
+    --color-sedan-bg: #E38826;
+    --color-suvs-bg: #006970;
+    --color-luxury-bg: #004241;
+    --color-text: #FFFFFF;
+    --color-border: #F2F2F2;
+    --color-hover-sedan: #E38826;
+    --color-hover-suvs: #006970;
+    --color-hover-luxury: #004241;
+    --color-bg-hover: #F2F2F2;
+
+    /* Font families */
+    --font-body: 'Lexend Deca', sans-serif;
+    --font-heading: 'Big Shoulders Display', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+}
+
+#sedan, #suvs, #luxury {
+    flex: 1 1 33.3%; 
+    min-width: 300px; 
+    padding: 15% 5% 5%;
+}
+
+#sedan {
+    background-color:var(--color-sedan-bg);
+}
+#suvs {
+    background-color:var(--color-suvs-bg);
+}
+#luxury {
+    background-color:var(--color-luxury-bg);
+}
+p {
+    align-items: center;
+    color:var(--color-text);
+    display: flex;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    width: 80%;
+}
+h1 {
+    align-items: center;
+    color:var(--color-text);
+    display: flex;
+    font-family: var(--font-heading);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+div {
+    display: block;
+}
+.button {
+border-radius: 30px;
+border: 1px solid var(--color-border);
+box-sizing: border-box;
+height: 49px;
+left: 30px;
+margin-top: 20px;
+padding: 15px 30px;
+position: relative;
+text-align: center;
+text-wrap: nowrap;
+width: 143px;
+}
+#sedanButton:hover{
+background-color: var(--color-hover-sedan);
+color: var(--color-bg-hover);
+cursor: pointer;
+transition: background-color .3s;
+transition: color .3s;
+}
+#suvsButton:hover{
+background-color: var(--color-hover-luxury);
+color: #006970;
+cursor: pointer;
+transition: background-color .3s;
+transition: color .3s;
+}
+#luxuryButton:hover{
+background-color: var(--color-bg-hover);
+color: #004241;
+cursor: pointer; 
+transition: background-color .3s;
+transition: color .3s;
+}
+
+  
+
+
+@media (max-width: 1024px) {
+    #sedan, #suvs {
+        flex: 1 1 50%; 
+        padding: 5%;
+    }
+    #luxury {
+        flex: 1 1 100%; 
+        padding: 5% 30%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #sedan, #suvs, #luxury {
+        flex: 1 1 100%; 
+        padding: 10%; 
+    }
+    h1 {
+        font-size: 24px; 
+    }
+    p {
+        font-size: 14px; 
+        line-height: 18px;
+    }
+    .button {
+        padding: 10px 20px; 
+    }
+}
+
+
